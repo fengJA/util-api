@@ -1,0 +1,62 @@
+server:
+  port: 9002
+#spring:
+#  cloud:
+#    gateway:
+#     discovery:
+#        locator:
+#          enabled:  true
+#         lower-case-service-id: true
+#     routes:
+#      -id: grpc-client-9988
+#        uri: lb://grpc-client
+#       predicates:
+#          - Path=/consumer/**
+#       filters:
+#         -StripPrefix=1
+##    gateway:
+##      routes:   # 配置路由
+##        -id: grpc-client
+##        uri: http://localhost:9988
+##        predicates:
+##         -Path= /pms/**
+##      discovery:
+##        locator:
+##          enabled: true
+#    consul:
+#      host: localhost
+#      port: 8500
+#      discovery:
+#        hostname: localhost
+#  application:
+#    name: gateway-service9002
+
+spring:
+  application:
+    name: consul-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          #默认为 false，设为 true 便开启通过服务中心的自动根据 serviceId 创建路由的功能
+          enabled: true
+      routes:
+        #可以看到 id 如果不写的话默认是uuid 唯一值,不可重复
+        - id: grpc-client-01
+          #uri指需要跳转的地址, 这里的uri不是一个具体的地址了,而是lb://开头,加上serviceId
+          uri: lb://grpc-client
+          #值越大，优先级越低
+          order: 0
+          #请求地址携带/lb-test则会跳转到我们配置的uri
+          predicates:
+            #  访问的地址就是：http://localhost:9002/lb-test/pms/find/1
+            - Path=/lb-test/**
+          filters:
+            #StripPrefix=1(将/lb-test截取掉，向后端发起请求真实地址为/feignCluster/feignClusterTest?msgInfo=1323)
+            #- StripPrefix=1
+            # - StripPrefix=1 等同于 - RewritePath=/lb-test/(?<segment>.*), /$\{segment}
+            - RewritePath=/lb-test/(?<segment>.*), /$\{segment}
+            - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+
+
+
