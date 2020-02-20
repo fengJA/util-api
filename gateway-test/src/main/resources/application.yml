@@ -34,6 +34,10 @@ server:
 spring:
   application:
     name: consul-gateway
+  redis:
+    host: 192.168.4.27
+    port: 6379
+    database: 0
   cloud:
     gateway:
       discovery:
@@ -57,6 +61,7 @@ spring:
             # - StripPrefix=1 等同于 - RewritePath=/lb-test/(?<segment>.*), /$\{segment}
             - RewritePath=/lb-test/(?<segment>.*), /$\{segment}
             - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+            - name
 
 
 
