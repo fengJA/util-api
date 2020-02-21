@@ -2,10 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.fj.pagehelper.mapper.PmsMapper" >
 
-    <select id="queryPageInfo" resultType="String" parameterType="com.fj.pagehelper.vo.QueryParam">
-        select des from pms where 1=1
+    <!-- 返回类型resultType：如果是List的，则是需要写List封装的数据的类型-->
+    <select id="queryPageInfo" resultType="com.fj.pagehelper.entity.Pms" parameterType="com.fj.pagehelper.vo.QueryParam">
+        select name,des from pms where 1=1
         <if test="des !=null and des !='' ">
-            and des LIKE concat(concat('%',#{des}),'%')
+            and des like concat('%',#{des},'%')
         </if>
     </select>
 
