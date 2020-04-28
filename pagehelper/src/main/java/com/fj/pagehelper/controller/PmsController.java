@@ -35,6 +35,8 @@ public class PmsController {
         Page page = PageHelper.startPage(queryParam.getPageNumber(), queryParam.getPageSize(),true);
         List<Pms> pmsPage = pmsService.queryPageDemoInfo(queryParam);
 
+//        PageInfo<Pms> pmsPageInfo = new PageInfo<>(pmsPage);// 可以获得当前页数，下一页、上一页等
+
         return ResultUtils.pagerSuccess(pmsPage, Const.QUERY_MSG_SUCESS,page);
     }
 }

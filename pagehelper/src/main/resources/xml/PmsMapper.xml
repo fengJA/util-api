@@ -10,4 +10,19 @@
         </if>
     </select>
 
+    <!--<select id="queryPageInfo1" resultType="com.fj.pagehelper.entity.Pms">
+        select * from pms
+        <trim prefix="where" suffixOverrides="and/or">
+            <if test="id != null">
+                id = #{id} and
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name} or
+            </if>
+            <if test="des != null and des != ''">
+                des = #{des}
+            </if>
+        </trim>
+    </select>-->
+
 </mapper>

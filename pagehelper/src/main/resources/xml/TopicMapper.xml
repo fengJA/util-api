@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fj.pagehelper.mapper.TopicMapper" >
+    <!-- void addParam(Topic topic); -->
+    <insert id="addParam" parameterType="com.fj.pagehelper.entity.Topic">
+<!--        insert into topic value (null,#{topic.topic_name},#{topic.topic_num},#{topic.topic_status},#{topic.topic_date}) -->
+         insert into
+          topic(topic_name,topic_num,topic_status,topic_date)
+         values
+          (#{topicName},#{topicNum},#{topicStatus},#{topicDate})
+    </insert>
+
+
+    <select id="queryTopicInfoDetails" parameterType="java.lang.String" resultMap="queryTopicInfoDetailsResultMap">
+        select topic.TopicName as topicName ,topic.ChannelType as channelType,topic.PostNum as postNum, history.UserName as userName,history.HaveName as haveName,history.CreatedAt as createdAt,history.Remark as remark
+        from cm_topicinfo topic inner join cm_history history
+        on topic.Id = #{id}
+        and topic.Id = history.BusinessId
+    </select>
+
+    <resultMap id="queryTopicInfoDetailsResultMap" type="com.fj.pagehelper.entity.TopicInfoResultParam">
+        <!--<id column="Id" property="id"></id>-->
+        <result column="TopicName" property="topicName"></result>
+        <result column="ChannelType" property="channelType"></result>
+        <result column="PostNum" property="postNum"></result>
+        <collection property="operateHistoryDtos" resultMap="queryOperateHistoryDto">
+
+        </collection>
+
+    </resultMap>
+
+    <resultMap id="queryOperateHistoryDto" type="com.fj.pagehelper.entity.OperateHistoryDto">
+        <!--<id column="Id" property="id"></id>-->
+        <result column="UserName" property="userName"></result>
+        <result column="HaveName" property="haveName"></result>
+        <result column="CreatedAt" property="createdAt"></result>
+        <result column="Remark" property="remark"></result>
+    </resultMap>
+
+</mapper>
