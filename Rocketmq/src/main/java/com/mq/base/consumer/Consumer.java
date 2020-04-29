@@ -21,7 +21,7 @@ public class Consumer {
         //3.订阅主题Topic和Tag
         consumer.subscribe("springboot-mq", "*");
 
-        //设定消费模式：负载均衡|广播模式
+        //设定消费模式：负载均衡|广播模式，默认是负载均衡模式
         consumer.setMessageModel(MessageModel.BROADCASTING);
 
         //4.设置回调函数，处理消息
