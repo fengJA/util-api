@@ -3,13 +3,12 @@ package com.aliyun.aliyundemo.service;
 import com.aliyun.aliyundemo.vo.FileUploadResponseVo;
 import com.aliyun.oss.ClientException;
 import com.aliyun.oss.OSSException;
-import org.springframework.stereotype.Service;
+import it.sauronsoftware.jave.EncoderException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
 
-@Service
 public interface AliyunOssService {
     /**
      * 批量文件上传
@@ -25,6 +24,6 @@ public interface AliyunOssService {
      * @throws OSSException
      * @throws ClientException
      */
-    List<FileUploadResponseVo> upload(List<MultipartFile> files, Integer fileType) throws IOException, OSSException, ClientException;
+    List<FileUploadResponseVo> upload(List<MultipartFile> files, Integer fileType) throws IOException, OSSException, ClientException, EncoderException;
 
 }

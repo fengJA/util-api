@@ -2,13 +2,17 @@ package com.aliyun.aliyundemo.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 文件上传返回vo
  */
 @Data
 @ApiModel(value = "FileUploadResponseVo", description = "上传文件响应Vo")
+@AllArgsConstructor
+@NoArgsConstructor
 public class FileUploadResponseVo {
     @ApiModelProperty(value = "上传文件名称")
     private String sourceFileName;
