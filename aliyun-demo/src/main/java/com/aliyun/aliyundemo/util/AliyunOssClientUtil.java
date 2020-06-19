@@ -115,7 +115,7 @@ public class AliyunOssClientUtil {
         String style = "x-oss-process=video/snapshot,t_1,f_png,ar_auto,m_fast";
         String imgSourceUrl = fileUrl + "?" + style;
 
-        // 上传截图
+        // 上传截图,是截取到字符窜最后面，即原视频文件名
         File file = new File(remoteFileName.substring(remoteFileName.indexOf("/")));
         inputStreamToFile(getImageStream(imgSourceUrl), file);
         PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, imgPath, file);
@@ -196,7 +196,7 @@ public class AliyunOssClientUtil {
     }
 
     private FileUploadResponseVo uplaodFile(String sourceFileName, String folder, File file, OSS ossClient, Integer fileType) {
-        // 存储至OSS的文件名,一般用主键生成器
+        // 存储至OSS的文件名,一般用主键生成器，new SecureRandom().nextInt(0x0400)，安全性高些
         String remoteFileName = getToday() + "/" + UUID.randomUUID() + "-" + sourceFileName;
         // 存储至OSS文件路径
         String path = folder + remoteFileName;
