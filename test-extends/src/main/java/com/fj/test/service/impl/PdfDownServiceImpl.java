@@ -84,91 +84,60 @@ public class PdfDownServiceImpl implements PdfDownService {
         pdfPTable.setHorizontalAlignment(5);
         Paragraph elements = new Paragraph(1);
         PdfPCell pCell1 = new PdfPCell(new Paragraph("设备Id：", textFont));
-        PdfPCell pCell2 = new PdfPCell(new Phrase("我就是设备Id-98989", textFont));
+        PdfPCell pCell2 = new PdfPCell(new Phrase("", textFont));
         PdfPCell pCell5 = new PdfPCell(new Phrase(" ", textFont));
         PdfPCell pCell3 = new PdfPCell(new Paragraph("卡Id：", textFont));
         PdfPCell pCell4 = new PdfPCell(new Phrase("我就是卡Id-76767", textFont));
 //        pCell2.setCalculatedHeight(5);
 //        pCell4.setMinimumHeight(5);
-        pdfPTable.addCell(pCell1).setBorder(0);
+        pdfPTable.addCell(pCell1).setBorder(15);
         pdfPTable.addCell(pCell2).setBorder(15);
         pdfPTable.addCell(pCell5).setBorder(0);
-        pdfPTable.addCell(pCell3).setBorder(0);
+        pdfPTable.addCell(pCell3).setBorder(15);
         pdfPTable.addCell(pCell4).setBorder(15);
         doc.add(pdfPTable);
         doc.add(blankRow2);
 
         // 添加图片
-        PdfPTable machineInfo = new PdfPTable(3);
-        float machineWidth[] = {4,8,60};
-        machineInfo.setWidths(machineWidth);
-//        machineInfo.setTotalWidth(20f);
-        machineInfo.setHorizontalAlignment(0);
+//        PdfPTable machineInfo = new PdfPTable(3);
+//        float machineWidth[] = {4,8,60};
+//        machineInfo.setWidths(machineWidth);
+////        machineInfo.setTotalWidth(20f);
+//        machineInfo.setHorizontalAlignment(0);
 
 //        machineInfo.setWidthPercentage(0);
 
-        Image image =Image.getInstance("D:\\360极速浏览器下载\\刘亦菲\\刘亦菲.jpg");
-//        image.setAlignment(Image.ALIGN_CENTER);
-        image.scalePercent(3f);//依照比例缩放
-        PdfPCell mahineCell = new PdfPCell(new Paragraph("农机信息：", FontChinese11Bold));
-        PdfPCell mahineCel2 = new PdfPCell(new Paragraph("  ", FontChinese11Bold));
-        PdfPCell mahineCel3 = new PdfPCell(image);
-        machineInfo.addCell(mahineCel3).setBorder(0);
-        machineInfo.addCell(mahineCell).setBorder(0);
-        machineInfo.addCell(mahineCel2);
-        doc.add(machineInfo);
-        doc.add(blankRow2);
+//        Image image =Image.getInstance("D:\\360极速浏览器下载\\刘亦菲\\刘亦菲.jpg");
+////        image.setAlignment(Image.ALIGN_CENTER);
+//        image.scalePercent(3f);//依照比例缩放
+//        PdfPCell mahineCell = new PdfPCell(new Paragraph("农机信息：", FontChinese11Bold));
+//        PdfPCell mahineCel2 = new PdfPCell(new Paragraph("  ", FontChinese11Bold));
+//        PdfPCell mahineCel3 = new PdfPCell(image);
+//        machineInfo.addCell(mahineCel3).setBorder(0);
+//        machineInfo.addCell(mahineCell).setBorder(0);
+//        machineInfo.addCell(mahineCel2);
+//        doc.add(machineInfo);
+//        doc.add(blankRow2);
 
         // 前装设备表格信息
-        PdfPTable virfyInfo = new PdfPTable(3);
-        float virfyWidth[] = {16,40,60};
+
+        PdfPTable virfyInfo = new PdfPTable(4);
+        float virfyWidth[] = {30,30,30,30};
         virfyInfo.setWidths(virfyWidth);
         virfyInfo.setHorizontalAlignment(0);
 
-        virfyInfo.addCell(new PdfPCell(new Paragraph("农机信息：", textFont))).setBorder(15);
+        virfyInfo.addCell(new PdfPCell(new Paragraph("证书编号：", textFont))).setBorder(15);
 //        virfyInfo.addCell(new PdfPCell(new Paragraph("设备Id：", FontChinese11Bold))).setBorder(15);
-        virfyInfo.addCell(new PdfPCell(new Paragraph("农机信息125454：", textFont))).setBorder(15);
-        virfyInfo.addCell(new PdfPCell(new Paragraph("我就是卡Id-76767：", textFont))).setBorder(0);
+        virfyInfo.addCell(new PdfPCell(new Paragraph("No-9876：", textFont))).setBorder(15);
+        virfyInfo.addCell(new PdfPCell(new Paragraph("证书状态：", textFont))).setBorder(15);
 //        virfyInfo.addCell(new PdfPCell(new Paragraph("卡Id：", textFont))).setBorder(0);
 //        virfyInfo.addCell(new PdfPCell(new Paragraph("我就是卡Id-76767", textFont))).setBorder(0);
+        virfyInfo.addCell(new PdfPCell(new Paragraph("已注销", textFont))).setBorder(15);
         doc.add(virfyInfo);
         doc.add(blankRow2);
 
-//        //新建表格 列数为2
-//         PdfPTable table1 = new PdfPTable(2);
-//         //给表格设置宽度
-//        int width1[] = {80,60};
-//        table1.setWidths(width1);
-//         //新建单元格
-//         String name="霸道";
-//         String gender="男";
-//         //给单元格赋值 每个单元格为一个段落，每个段落的字体为加粗
-//         PdfPCell cell11 = new PdfPCell(new Paragraph("姓名：  "+name,boldFont));
-//         PdfPCell cell12 = new PdfPCell(new Paragraph("性别：  "+gender,boldFont));
-//         //设置单元格边框为0
-//         cell11.setBorder(0);
-//         cell12.setBorder(0);
-//         table1.addCell(cell11);
-//        table1.addCell(cell12);
-//        doc.add(table1);
-//         PdfPTable table3 = new PdfPTable(2);
-//        table3.setWidths(width1);
-//         PdfPCell cell15 = new PdfPCell(new Paragraph("博客主页： https://me.csdn.net/BADAO_LIUMANG_QIZHI  ",boldFont));
-//         PdfPCell cell16 = new PdfPCell(new Paragraph("当前时间：  "+ new SimpleDateFormat().format(new Date()),boldFont));
-//        cell15.setBorder(0);
-//        cell16.setBorder(0);
-//         table3.addCell(cell15);
-//         table3.addCell(cell16);
-//        doc.add(table3);
-//        PdfPTable table4 = new PdfPTable(2);
-//        table4.setWidths(width1);
-//        PdfPCell cell17 = new PdfPCell(new Paragraph("博客主页： https://me.csdn.net/BADAO_LIUMANG_QIZHI  ",boldFont));
-//        PdfPCell cell18 = new PdfPCell(new Paragraph("当前时间：  "+ new SimpleDateFormat().format(new Date()),boldFont));
-//        cell17.setBorder(0);
-//        cell18.setBorder(0);
-//        table4.addCell(cell17);
-//        table4.addCell(cell18);
-//        doc.add(table4);
+
+
         doc.close();
 
     }

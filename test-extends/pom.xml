@@ -106,7 +106,41 @@
             <version>5.2.0</version>
         </dependency>
 
+
+        <!-- PDF 扫描 -->
+        <!--<dependency>-->
+            <!--<groupId>e-iceblue</groupId>-->
+            <!--<artifactId>spire.pdf.free</artifactId>-->
+            <!--<version>2.2.2</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.pdf.free</artifactId>
+            <version>2.6.3</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId> e-iceblue </groupId>-->
+            <!--<artifactId>spire.pdf</artifactId>-->
+            <!--<version>3.4.2</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>com.e-iceblue</id>
+            <url>http://repo.e-iceblue.cn/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
 
     <build>
         <plugins>
