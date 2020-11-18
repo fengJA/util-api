@@ -1,6 +1,7 @@
 package com.fj.test.outerclass;
 
 
+import java.util.Objects;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -27,5 +28,16 @@ public class ReIntoLock {
         lock.lock();
         System.out.println("000");
         lock.unlock();
+    }
+
+
+    public static void main(String[] args) {
+        String[] s = new String[2];
+        s[0] = "fengjia";
+
+        if (Objects.isNull(s[1])){
+
+            System.out.println("keyide ");
+        }
     }
 }

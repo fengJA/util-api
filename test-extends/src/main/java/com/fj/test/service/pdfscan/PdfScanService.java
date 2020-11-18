@@ -13,4 +13,10 @@ public interface PdfScanService {
      * @param file
      */
     void uploadPdf(MultipartFile file) throws Exception;
+
+    /**
+     * itext解析PDF
+     * @param file
+     */
+    void itextScanPdf(MultipartFile file);
 }

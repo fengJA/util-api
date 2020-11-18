@@ -23,4 +23,9 @@ public class PdfScanController {
     public void excelPdf(@RequestParam(value = "file", required = false) MultipartFile file, HttpServletRequest request) throws Exception {
         pdfScanService.scanPdf();
     }
+
+    @PostMapping(value = "/itext-scanPdf")
+    public void itextScanPdf(@RequestParam(value = "file", required = false) MultipartFile file, HttpServletRequest request) throws Exception {
+        pdfScanService.itextScanPdf(file);
+    }
 }
