@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fj.redis.mapper.redismapper.RedisMapper">
+    <select id="queryMachineInfo" resultType="com.fj.redis.entity.CanDataDto">
+        SELECT id, machineName, plateNumber FROM tb_machineinfo WHERE deleted = 0
+    </select>
+</mapper>
