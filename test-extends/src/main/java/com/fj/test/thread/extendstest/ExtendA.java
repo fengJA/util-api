@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class ExtendA {
     public ExtendA(){
-
+        System.out.println("ExtendA....");
     }
 
     public ExtendA(int i) {

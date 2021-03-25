@@ -50,6 +50,7 @@ public class RedisServiceImp implements RedisService {
             }
         }
 //        redisTemplate.opsForValue().set(deviceNumber + nowTime,"FJJ");
+
         redisTemplate.opsForHash().putAll(deviceNumber + nowTime, map);
         String s = redisTemplate.opsForValue().get(deviceNumber + nowTime);
         System.out.println(s);

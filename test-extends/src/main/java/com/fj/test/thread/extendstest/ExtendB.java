@@ -11,6 +11,11 @@ public class ExtendB extends ExtendA {
         System.out.println("scal2......");
     }
 
+    public void scal(int a){
+//        super.scal(100);
+        System.out.println("scal ExtendB......");
+    }
+
     public void oh(){
         super.scal(100);
         System.out.println("scal2......");

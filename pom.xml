@@ -10,6 +10,7 @@
     <modules>
         <module>grpc-demo</module>
         <module>Rocketmq</module>
+        <module>spring-cycle</module>
     </modules>
     <packaging>pom</packaging>
 
