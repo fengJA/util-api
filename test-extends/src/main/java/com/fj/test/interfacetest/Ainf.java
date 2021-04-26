@@ -1,5 +1,7 @@
 package com.fj.test.interfacetest;
 
+import com.fj.test.abstracttest.Abstract2;
+
 public interface Ainf extends Int2, Int3{
     void ainf();
 
@@ -13,6 +15,7 @@ public interface Ainf extends Int2, Int3{
         String s = oner.s1;
         System.out.println(s);
         oner.onerM();
+
     }
 
     default void sa(){
@@ -39,4 +42,6 @@ public interface Ainf extends Int2, Int3{
             System.out.println("pubM.....");
         }
     }
+
+
 }

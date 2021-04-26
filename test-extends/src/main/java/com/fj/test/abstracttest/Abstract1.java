@@ -7,6 +7,12 @@ public abstract class Abstract1 extends Abstract2 implements Ainf {
     private int i;
     // 初始定义时就必须赋值
     public static final String s = "sssss";
+
+    public Abstract1(int a) {
+        super(a);
+        Abstract2.oner oner = new Abstract2.oner();
+    }
+
     abstract void a1();
 
     void a2(){
@@ -18,7 +24,5 @@ public abstract class Abstract1 extends Abstract2 implements Ainf {
         final int b;
     }
 
-    class oner{
 
-    }
 }

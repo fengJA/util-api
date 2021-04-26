@@ -20,6 +20,10 @@ public class CanDataDto {
     private String machineName;
     @ApiModelProperty(value = "农机车牌")
     private String plateNumber;
+
+    public CanDataDto() {
+    }
+
     public static void main(String[] args) {
         new Thread(() -> {
             ReentrantLock lock = new ReentrantLock();

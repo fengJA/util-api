@@ -23,6 +23,7 @@ public class OnerClassT {
      * 静态成员类可以有静态方法、静态代码块、静态常量；静态成员类优于其他内部类
      * 可在其他类里面创建其实例：OnerClassT.Oner3 oner3 = new OnerClassT.Oner3();
      * 如果是private的，则只能在外围类的内部调用
+     * 直接在其方法里面实例化外部类，就可以调用外部的方法、成员变量,包括私有
      */
     static class Oner3{
         private int o1;
@@ -33,6 +34,7 @@ public class OnerClassT {
         private void oM(){
             System.out.println("n1 = " + bs);
             System.out.println("o2 = " + o2);
+            int bs = new OnerClassT().n;
         }
         void oS(){
             System.out.println("oS1......");

@@ -25,13 +25,17 @@ public class ExtendA {
         System.out.println("dup......");
     }
 
+    public void respect(){
+        System.out.println("A respect...");
+    }
+
 //    private ExtendA s = new ExtendA();
 
     private static final String str = "fin";
     private static Random random = new Random(40);
     private final int i4 = random.nextInt(20);
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
 //        ExtendA extendA = new ExtendA();
 //        extendA.scal(100);
 
@@ -56,4 +60,22 @@ public class ExtendA {
         System.out.println(Long.toBinaryString(maxWorkerId));
     }
 
+    private final void q(int a){
+
+    }
+
+    private final void q(int a, int b){
+
+    }
+
+    class oners{
+        private static final int num = 8;
+        String s1;
+        private void onerM(){
+            System.out.println("onerM.....");
+        }
+        public void pubM(){
+            System.out.println("pubM.....");
+        }
+    }
 }
