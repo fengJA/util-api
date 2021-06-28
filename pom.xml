@@ -11,6 +11,7 @@
         <module>grpc-demo</module>
         <module>Rocketmq</module>
         <module>spring-cycle</module>
+        <module>kafka-demo</module>
     </modules>
     <packaging>pom</packaging>
 
