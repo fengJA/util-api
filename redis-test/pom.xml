@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <starter.web.version>2.1.4.RELEASE</starter.web.version>
+        <starter.web.version>2.5.12</starter.web.version>
         <spring.cloud.version>Hoxton.SR1</spring.cloud.version>
         <starter.consul.discovery>2.2.1.RELEASE</starter.consul.discovery>
         <starter.actuator>2.2.6.RELEASE</starter.actuator>
